@@ -1,48 +1,48 @@
-import React from "react";
+import React from 'react';
 import {
   Dimensions,
   StatusBar,
   Animated,
   Pressable,
-} from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
+} from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
 import {
   NativeBaseProvider,
   Box,
   Center,
   useColorModeValue,
-} from "native-base";
+} from 'native-base';
 
 /* ==================================================
     Components import
 ================================================== */
 
-import Movies from "./Movies";
+import Movies from './Movies';
 import SearchResults from './SearchResults';
 import TVShows from './TVShows';
 
 
 const FirstRoute = () => (
-  <Center flex={1} my="4">
-    <Movies/>
+  <Center flex={1} mt={5}>
+    <Movies />
   </Center>
 );
 
 const SecondRoute = () => (
-  <Center flex={1} my="4">
+  <Center flex={1} mt={2}>
     <SearchResults />
   </Center>
 );
 
 const ThirdRoute = () => (
-  <Center flex={1} my="4">
+  <Center flex={1} mt={2}>
     <TVShows />
   </Center>
 );
 
 
 const initialLayout = {
-  width: Dimensions.get("window").width,
+  width: Dimensions.get('window').width,
 };
 const renderScene = SceneMap({
   first: FirstRoute,
@@ -54,23 +54,23 @@ function TabBar() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
-      key: "first",
-      title: "Movies",
+      key: 'first',
+      title: 'Movies',
     },
     {
-      key: "second",
-      title: "Search Results",
+      key: 'second',
+      title: 'Search Results',
     },
     {
-      key: "third",
-      title: "TV Shows",
+      key: 'third',
+      title: 'TV Shows',
     },
   ]);
 
   const renderTabBar = (props) => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
     return (
-      <Box flexDirection="row">
+      <Box flexDirection='row'>
         {props.navigationState.routes.map((route, i) => {
           const opacity = props.position.interpolate({
             inputRange,
@@ -80,21 +80,21 @@ function TabBar() {
           });
           const color =
             index === i
-              ? useColorModeValue("#000", "#e5e5e5")
-              : useColorModeValue("#a1a1aa", "#a1a1aa");
+              ? useColorModeValue('#000', '#e5e5e5')
+              : useColorModeValue('#a1a1aa', '#a1a1aa');
           const borderColor =
             index === i
-              ? "#2c3e50"
-              : useColorModeValue("coolGray.200", "gray.400");
+              ? '#2c3e50'
+              : useColorModeValue('coolGray.200', 'gray.400');
           return (
             <Box
               key={i}
-              borderBottomWidth="3"
+              borderBottomWidth='3'
               borderColor={borderColor}
               flex={1}
-              alignItems="center"
-              p="3"
-              cursor="pointer"
+              alignItems='center'
+              p='3'
+              cursor='pointer'
             >
               <Pressable
                 onPress={() => {

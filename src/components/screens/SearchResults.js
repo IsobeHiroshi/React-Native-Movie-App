@@ -1,20 +1,20 @@
-import { Text } from "native-base";
+import { Text } from 'native-base';
 
-import Selector from "../forms/Selector.js";
+import Selector from '../forms/Selector.js';
 
 const SearchResults = () => {
   const selectOptions = [
     {
       key: 1,
-      option: "movie",
+      option: 'movie',
     },
     {
       key: 2,
-      option: "multi",
+      option: 'multi',
     },
     {
       key: 3,
-      option: "tv",
+      option: 'tv',
     },
   ];
   

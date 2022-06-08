@@ -1,5 +1,5 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '../screens/Home'
 
@@ -9,15 +9,15 @@ const AppStack = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
-        name="home"
+        name='home'
         component={Home}
         options={{
-          title: "Movies App",
+          title: 'Movies App',
           headerStyle: {
-            backgroundColor: "#2c3e50",
+            backgroundColor: '#2c3e50',
           },
           headerTitleStyle: {
-            color: "#fff",
+            color: '#fff',
           },
         }}
       />

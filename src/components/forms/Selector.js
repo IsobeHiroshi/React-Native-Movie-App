@@ -1,30 +1,29 @@
-import React from "react";
-import { Select, Center, Box, CheckIcon, FlatList } from "native-base";
+import React from 'react';
+import { Select, Center, Box, CheckIcon, FlatList } from 'native-base';
 
-const Selector = ({options}) => {
-  let [service, setService] = React.useState("");
+const Selector = ({options, sortBy, setSortBy}) => {
   return (
     <Center>
-      <Box w="3/4" maxW="300">
+      <Box w='3/4' maxW='300'>
         <Select
-          selectedValue={service}
-          minWidth="200"
-          accessibilityLabel="Choose Service"
-          placeholder="Choose Service"
+          selectedValue={sortBy}
+          minWidth='200'
+          accessibilityLabel='Choose Service'
+          placeholder='Choose Service'
           _selectedItem={{
-            bg: "teal.600",
-            endIcon: <CheckIcon size="5" color="#fff"/>,
-            _text: {color:"white"}
+            bg: 'teal.600',
+            endIcon: <CheckIcon size='5' color='#fff' />,
+            _text: { color: 'white' },
           }}
           mt={1}
-          onValueChange={(itemValue) => setService(itemValue)}
+          onValueChange={(sortByValue) => setSortBy(sortByValue)}
         >
-          {options.map(option=>{
+          {options.map((option) => {
             return (
               <Select.Item
                 key={option.key}
-                label={option.option}
-                value={option.option}
+                label={option.sortBy}
+                value={option.sortBy}
               />
             );
           })}
