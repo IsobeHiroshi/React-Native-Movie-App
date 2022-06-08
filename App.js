@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
-import { StyleSheet } from "react-native";
 import AppStack from "./src/components/stacks/AppStack";
 
 const App = () => {

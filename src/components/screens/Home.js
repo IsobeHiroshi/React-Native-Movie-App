@@ -13,21 +13,30 @@ import {
   useColorModeValue,
 } from "native-base";
 
+/* ==================================================
+    Components import
+================================================== */
+
+import Movies from "./Movies";
+import SearchResults from './SearchResults';
+import TVShows from './TVShows';
+
+
 const FirstRoute = () => (
   <Center flex={1} my="4">
-    This is Tab 1
+    <Movies/>
   </Center>
 );
 
 const SecondRoute = () => (
   <Center flex={1} my="4">
-    This is Tab 2
+    <SearchResults />
   </Center>
 );
 
 const ThirdRoute = () => (
   <Center flex={1} my="4">
-    This is Tab 3
+    <TVShows />
   </Center>
 );
 
@@ -41,7 +50,7 @@ const renderScene = SceneMap({
   third: ThirdRoute,
 });
 
-function Example() {
+function TabBar() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -127,7 +136,7 @@ function Example() {
 const Home = () => {
   return (
     <NativeBaseProvider>
-        <Example />
+      <TabBar />
     </NativeBaseProvider>
   );
 };
