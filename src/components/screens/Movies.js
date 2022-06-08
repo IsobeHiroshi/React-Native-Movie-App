@@ -7,18 +7,22 @@ const Movies = () => {
 
   const selectOptions = [
     {
-      key:1,
+      key: 1,
       option: "now_playing",
     },
     {
-      key:2,
+      key: 2,
+      option: "popular",
+    },
+    {
+      key: 3,
       option: "top_rated",
     },
     {
-      key:3,
+      key: 3,
       option: "upcoming",
-    }
-  ]
+    },
+  ];
 
   return (
     <>
