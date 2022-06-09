@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList } from 'native-base';
 
-import ShowCard from "../listItems/ShowCard";
+import ShowCard from '../listItems/ShowCard';
 
 
 const ShowLists = ({showArr, navigation})=> {

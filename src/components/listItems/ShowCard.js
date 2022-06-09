@@ -6,36 +6,36 @@ const ShowCard = ({ title, img, popularity, releaseDate, overview, navigation })
   const imgUrl = `https://image.tmdb.org/t/p/original${img}`
 
   return (
-    <Flex direction="row" mb={4}>
+    <Flex direction='row' mb={4}>
       {img ? (
         <Image
           source={{
             uri: imgUrl,
           }}
           alt={title}
-          width="30%"
-          height="auto"
+          width='30%'
+          height='auto'
           mr={3}
         />
       ) : (
         <Flex
-          width="30%"
-          height="auto"
+          width='30%'
+          height='auto'
           mr={3}
-          justify="center"
-          align="center"
-          bg="#919191"
+          justify='center'
+          align='center'
+          bg='#919191'
         >
-          <Text color="white">Image not available</Text>
+          <Text color='white'>Image not available</Text>
         </Flex>
       )}
-      <Box width="65%">
-        <Text fontWeight="bold">{title}</Text>
+      <Box width='65%'>
+        <Text fontWeight='bold'>{title}</Text>
         <Text>Popularity: {popularity}</Text>
         <Text>Release Data: {releaseDate}</Text>
         <Button
           onPress={() => {
-            navigation.navigate("showDetail", {
+            navigation.navigate('showDetail', {
               title: title,
               imgUrl: imgUrl,
               popularity: popularity,
@@ -44,7 +44,7 @@ const ShowCard = ({ title, img, popularity, releaseDate, overview, navigation })
             });
           }}
         >
-          <Text color="white">More Details</Text>
+          <Text color='white'>More Details</Text>
         </Button>
       </Box>
     </Flex>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, Select, CheckIcon, Text } from "native-base";
+import { FormControl, Select, CheckIcon, Text } from 'native-base';
 
 
 const SearchTypeSelector = ({type, setType, options, errors})=> {
@@ -9,16 +9,16 @@ const SearchTypeSelector = ({type, setType, options, errors})=> {
       <FormControl.Label>Choose Search Type</FormControl.Label>
       <Select
         selectedValue={type}
-        accessibilityLabel="Choose Search Type"
-        placeholder="Choose Service"
+        accessibilityLabel='Choose Search Type'
+        placeholder='Choose Service'
         _selectedItem={{
-          bg: "teal.600",
-          endIcon: <CheckIcon size="5" color="#fff" />,
-          _text: { color: "white" },
+          bg: 'teal.600',
+          endIcon: <CheckIcon size='5' color='#fff' />,
+          _text: { color: 'white' },
         }}
         mr={2}
         onValueChange={(typeValue) => setType(typeValue)}
-        borderColor={errors.name ? "#f01111" : "#969595"}
+        borderColor={errors.name ? '#f01111' : '#969595'}
       >
         {options.map((option) => {
           return (

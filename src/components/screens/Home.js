@@ -23,49 +23,49 @@ import SearchResults from './SearchResults';
 const movieSelectorOptions = [
   {
     key: 1,
-    sortBy: "now_playing",
+    sortBy: 'now_playing',
   },
   {
     key: 2,
-    sortBy: "popular",
+    sortBy: 'popular',
   },
   {
     key: 3,
-    sortBy: "top_rated",
+    sortBy: 'top_rated',
   },
   {
     key: 3,
-    sortBy: "upcoming",
+    sortBy: 'upcoming',
   },
 ];
 
 const TVShowSelectorOptions = [
   {
     key: 1,
-    sortBy: "airing_today",
+    sortBy: 'airing_today',
   },
   {
     key: 2,
-    sortBy: "on_the_air",
+    sortBy: 'on_the_air',
   },
   {
     key: 3,
-    sortBy: "popular",
+    sortBy: 'popular',
   },
 ];
 
 const SearchSelectorOptions = [
   {
     key: 1,
-    searchType: "movie",
+    searchType: 'movie',
   },
   {
     key: 2,
-    searchType: "multi",
+    searchType: 'multi',
   },
   {
     key: 3,
-    searchType: "tv",
+    searchType: 'tv',
   },
 ];
 
@@ -73,8 +73,8 @@ const MoviePage = (navigation) => (
   <Center flex={1} mt={5}>
     <Shows
       options={movieSelectorOptions}
-      defaultOptionIndex="1"
-      category="movie"
+      defaultOptionIndex='1'
+      category='movie'
       navigation={navigation}
       />
   </Center>
@@ -84,7 +84,7 @@ const SearchPage = (navigation) => (
   <Center flex={1} mt={2}>
     <SearchResults
       options={SearchSelectorOptions}
-      defaultOptionIndex="1"
+      defaultOptionIndex='1'
       navigation={navigation}
     />
   </Center>
@@ -94,8 +94,8 @@ const TVShowPage = (navigation) => (
   <Center flex={1} mt={2}>
     <Shows
       options={TVShowSelectorOptions}
-      defaultOptionIndex="2"
-      category="tv"
+      defaultOptionIndex='2'
+      category='tv'
       navigation={navigation}
     />
   </Center>

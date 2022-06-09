@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Center, Box, Text, Button, Flex, FormControl } from 'native-base';
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
 
-import { API_KEY, BASE_URL } from "../../config/api_config";
+import { API_KEY, BASE_URL } from '../../config/api_config';
 
 import SearchBar from '../forms/SearchBar';
 import SearchTypeSelector from '../forms/SearchTypeSelector';
@@ -40,14 +40,14 @@ const SearchResults = ({options, defaultOptionIndex, navigation}) => {
   }
 
   return (
-    <Center width="85%">
-      <Box height="20%" mt={2}>
+    <Center width='85%'>
+      <Box height='20%' mt={2}>
         <SearchBar setKeyword={setKeyword} errors={errors} />
         <Flex
-          direction="row"
-          justify="space-between"
-          align="flex-end"
-          width="60%"
+          direction='row'
+          justify='space-between'
+          align='flex-end'
+          width='60%'
         >
           <SearchTypeSelector
             type={type}
@@ -55,29 +55,29 @@ const SearchResults = ({options, defaultOptionIndex, navigation}) => {
             options={options}
             errors={errors}
           />
-          <Button width="50%" onPress={() => loadSearchShows()}>
-            <Flex direction="row">
-              <FontAwesome name="search" size={20} color="white" />
-              <Text ml={2} color="white">
+          <Button width='50%' onPress={() => loadSearchShows()}>
+            <Flex direction='row'>
+              <FontAwesome name='search' size={20} color='white' />
+              <Text ml={2} color='white'>
                 Search
               </Text>
             </Flex>
           </Button>
         </Flex>
       </Box>
-      <Flex justify='flex-start' width='90%' height="2%">
+      <Flex justify='flex-start' width='90%' height='2%'>
         {errors.name && (
-          <Text color="#f01111" fontSize={11}>
+          <Text color='#f01111' fontSize={11}>
             {errors.name}
           </Text>
         )}
       </Flex>
-      <Box height="69%" width="100%" mb={5} mt={8}>
+      <Box height='69%' width='100%' mb={5} mt={8}>
         <Center>
           {showArr ? (
             <ShowLists showArr={showArr} category={type} navigation={navigation}/>
           ) : (
-            <Text mt={5} fontSize={22} fontWeight="bold">
+            <Text mt={5} fontSize={22} fontWeight='bold'>
               Please Initiate A Search.
             </Text>
           )}
