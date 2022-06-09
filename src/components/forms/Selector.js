@@ -9,7 +9,6 @@ const Selector = ({options, sortBy, setSortBy}) => {
           selectedValue={sortBy}
           minWidth='200'
           accessibilityLabel='Choose Service'
-          placeholder='Choose Service'
           _selectedItem={{
             bg: 'teal.600',
             endIcon: <CheckIcon size='5' color='#fff' />,

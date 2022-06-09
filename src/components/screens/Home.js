@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dimensions,
   StatusBar,
@@ -55,6 +55,21 @@ const TVShowSelectorOptions = [
   },
 ];
 
+const SearchSelectorOptions = [
+  {
+    key: 1,
+    searchType: "movie",
+  },
+  {
+    key: 2,
+    searchType: "multi",
+  },
+  {
+    key: 3,
+    searchType: "tv",
+  },
+];
+
 const MovieRoute = () => (
   <Center flex={1} mt={5}>
     <Shows
@@ -66,7 +81,10 @@ const MovieRoute = () => (
 
 const SearchRoute = () => (
   <Center flex={1} mt={2}>
-    <SearchResults />
+    <SearchResults
+      options={SearchSelectorOptions}
+      defaultOptionIndex="1"
+    />
   </Center>
 );
 
@@ -91,8 +109,8 @@ const renderScene = SceneMap({
 });
 
 function TabBar() {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
+  const [index, setIndex] = useState(0);
+  const [routes] = useState([
     {
       key: 'first',
       title: 'Movies',

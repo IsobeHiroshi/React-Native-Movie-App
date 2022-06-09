@@ -1,30 +1,32 @@
-import { Text } from 'native-base';
+import React, { useState } from "react";
+import { Center, Box, Text } from 'native-base';
 
-import Selector from '../forms/Selector.js';
+import SearchBar from '../forms/SearchBar';
+import SearchTypeSelector from '../forms/SearchTypeSelector';
 
-const SearchResults = () => {
-  const selectOptions = [
-    {
-      key: 1,
-      option: 'movie',
-    },
-    {
-      key: 2,
-      option: 'multi',
-    },
-    {
-      key: 3,
-      option: 'tv',
-    },
-  ];
-  
+const SearchResults = ({options, defaultOptionIndex}) => {
+
+  let [type, setType] = useState(options[defaultOptionIndex].searchBy);
+  let [keyword, setKeyword] = useState('')
+
   return (
-    <>
-      <Text>Search Results page</Text>
-      <Selector options={selectOptions} />
-    </>
+    <Center width="85%">
+      <Box height="30%" mt={2}>
+        <SearchBar
+          setKeyword={setKeyword}
+        />
+        <SearchTypeSelector
+          type={type}
+          setType={setType}
+          options={options}
+        />
+      </Box>
+      <Box height="67%" width="100%" mt={2}>
+        <Center>
+          <Text mt={5} fontSize={22} fontWeight='bold'>Please Initiate A Search.</Text>
+        </Center>
+      </Box>
+    </Center>
   );
-
 };
-
 export default SearchResults;

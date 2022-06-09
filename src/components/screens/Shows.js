@@ -21,7 +21,6 @@ const Shows = ({ options, defaultOptionIndex, category }) => {
       )
       .then((result) => {
         setShowArr(result.data.results);
-        console.log(options)
       }).then((result) => setIsLoading(false))
       .catch((error) => console.log(error));
   }
