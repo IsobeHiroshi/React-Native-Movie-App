@@ -1,17 +1,14 @@
 import React from 'react';
-import { FormControl, Flex, Select, Button, Text, CheckIcon } from "native-base";
-import { FontAwesome } from "@expo/vector-icons";
+import { FormControl, Flex, Select, CheckIcon } from "native-base";
 
 
 const SearchTypeSelector = ({type, setType, options})=> {
 
   return (
-    <FormControl width="85%" isRequired mt={3}>
+    <FormControl isRequired mt={3}>
         <FormControl.Label>Choose Search Type</FormControl.Label>
-        <Flex direction="row" justify="space-between" align='center'>
           <Select
             selectedValue={type}
-            minWidth="60%"
             accessibilityLabel="Choose Search Type"
             placeholder="Choose Service"
             _selectedItem={{
@@ -32,15 +29,6 @@ const SearchTypeSelector = ({type, setType, options})=> {
               );
             })}
           </Select>
-          <Button width="38%">
-            <Flex direction="row">
-              <FontAwesome name="search" size={20} color="white" />
-              <Text ml={2} color="white">
-                Search
-              </Text>
-            </Flex>
-          </Button>
-        </Flex>
     </FormControl>
   );
 }
