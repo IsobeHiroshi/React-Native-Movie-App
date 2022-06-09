@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text, Image, Button, Flex } from 'native-base';
 
-const MovieCard = ({ title, img, popularity, releaseDate }) => {
+const ShowCard = ({ title, img, popularity, releaseDate }) => {
   return (
     <Flex direction='row' mb={4}>
       <Image
@@ -25,4 +25,4 @@ const MovieCard = ({ title, img, popularity, releaseDate }) => {
   );
 };
 
-export default MovieCard;
+export default ShowCard;

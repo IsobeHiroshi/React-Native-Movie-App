@@ -11,32 +11,72 @@ import {
   Box,
   Center,
   useColorModeValue,
+  Text
 } from 'native-base';
 
 /* ==================================================
     Components import
 ================================================== */
 
-import Movies from './Movies';
+import Shows from './Shows';
 import SearchResults from './SearchResults';
-import TVShows from './TVShows';
 
+const movieSelectorOptions = [
+  {
+    key: 1,
+    sortBy: "now_playing",
+  },
+  {
+    key: 2,
+    sortBy: "popular",
+  },
+  {
+    key: 3,
+    sortBy: "top_rated",
+  },
+  {
+    key: 3,
+    sortBy: "upcoming",
+  },
+];
 
-const FirstRoute = () => (
+const TVShowSelectorOptions = [
+  {
+    key: 1,
+    sortBy: "airing_today",
+  },
+  {
+    key: 2,
+    sortBy: "on_the_air",
+  },
+  {
+    key: 3,
+    sortBy: "popular",
+  },
+];
+
+const MovieRoute = () => (
   <Center flex={1} mt={5}>
-    <Movies />
+    <Shows
+      options={movieSelectorOptions}
+      defaultOptionIndex="1"
+      category="movie"/>
   </Center>
 );
 
-const SecondRoute = () => (
+const SearchRoute = () => (
   <Center flex={1} mt={2}>
     <SearchResults />
   </Center>
 );
 
-const ThirdRoute = () => (
+const TVShowRoute = () => (
   <Center flex={1} mt={2}>
-    <TVShows />
+    <Shows
+      options={TVShowSelectorOptions}
+      defaultOptionIndex="2"
+      category="tv"
+    />
   </Center>
 );
 
@@ -45,9 +85,9 @@ const initialLayout = {
   width: Dimensions.get('window').width,
 };
 const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
-  third: ThirdRoute,
+  first: MovieRoute,
+  second: SearchRoute,
+  third: TVShowRoute,
 });
 
 function TabBar() {
