@@ -17,6 +17,7 @@ const ShowLists = ({showArr, navigation})=> {
             img={item.poster_path}
             popularity={item.popularity}
             releaseDate={item.release_date}
+            overview={item.overview}
             navigation={navigation}
           />
         );

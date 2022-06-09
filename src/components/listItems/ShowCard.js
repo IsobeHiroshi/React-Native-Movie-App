@@ -1,14 +1,16 @@
 import React from 'react';
 import { Box, Text, Image, Button, Flex } from 'native-base';
 
-const ShowCard = ({ title, img, popularity, releaseDate, navigation }) => {
+const ShowCard = ({ title, img, popularity, releaseDate, overview, navigation }) => {
+
+  const imgUrl = `https://image.tmdb.org/t/p/original${img}`
 
   return (
     <Flex direction="row" mb={4}>
       {img ? (
         <Image
           source={{
-            uri: `https://image.tmdb.org/t/p/original${img}`,
+            uri: imgUrl,
           }}
           alt={title}
           width="30%"
@@ -31,7 +33,17 @@ const ShowCard = ({ title, img, popularity, releaseDate, navigation }) => {
         <Text fontWeight="bold">{title}</Text>
         <Text>Popularity: {popularity}</Text>
         <Text>Release Data: {releaseDate}</Text>
-        <Button onPress={()=>navigation.navigate('showDetail')}>
+        <Button
+          onPress={() => {
+            navigation.navigate("showDetail", {
+              title: title,
+              imgUrl: imgUrl,
+              popularity: popularity,
+              releaseDate: releaseDate,
+              overview: overview
+            });
+          }}
+        >
           <Text color="white">More Details</Text>
         </Button>
       </Box>

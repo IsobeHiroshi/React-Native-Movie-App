@@ -23,7 +23,14 @@ const AppStack = () => (
           },
         }}
       />
-      <Stack.Screen name="showDetail" component={ShowDetail} />
+      <Stack.Screen
+        name="showDetail"
+        component={ShowDetail}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerBackTitle: "Back to List",
+        })}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
