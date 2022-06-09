@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text, Image, Button, Flex } from 'native-base';
 
-const ShowCard = ({ title, img, popularity, releaseDate, overview, navigation }) => {
+const ShowCard = ({ title, img, popularity, releaseDate, id, navigation, category }) => {
 
   const imgUrl = `https://image.tmdb.org/t/p/original${img}`
 
@@ -37,10 +37,8 @@ const ShowCard = ({ title, img, popularity, releaseDate, overview, navigation })
           onPress={() => {
             navigation.navigate('showDetail', {
               title: title,
-              imgUrl: imgUrl,
-              popularity: popularity,
-              releaseDate: releaseDate,
-              overview: overview
+              category: category,
+              id: id
             });
           }}
         >

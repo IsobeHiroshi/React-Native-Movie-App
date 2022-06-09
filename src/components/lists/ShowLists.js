@@ -4,7 +4,8 @@ import { FlatList } from 'native-base';
 import ShowCard from '../listItems/ShowCard';
 
 
-const ShowLists = ({showArr, navigation})=> {
+const ShowLists = ({showArr, navigation, category})=> {
+
   return(
     <FlatList
       data={showArr}
@@ -18,7 +19,9 @@ const ShowLists = ({showArr, navigation})=> {
             popularity={item.popularity}
             releaseDate={item.release_date}
             overview={item.overview}
+            id={item.id}
             navigation={navigation}
+            category={category === 'multi' ? item.media_type : category}
           />
         );
       }}
