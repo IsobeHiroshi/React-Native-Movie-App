@@ -9,7 +9,7 @@ import SearchBar from '../forms/SearchBar';
 import SearchTypeSelector from '../forms/SearchTypeSelector';
 import ShowLists from '../lists/ShowLists'
 
-const SearchResults = ({options, defaultOptionIndex}) => {
+const SearchResults = ({options, defaultOptionIndex, navigation}) => {
 
   const [type, setType] = useState(options[defaultOptionIndex].searchBy);
   const [keyword, setKeyword] = useState();
@@ -75,7 +75,7 @@ const SearchResults = ({options, defaultOptionIndex}) => {
       <Box height="69%" width="100%" mb={5} mt={8}>
         <Center>
           {showArr ? (
-            <ShowLists showArr={showArr} category={type} />
+            <ShowLists showArr={showArr} category={type} navigation={navigation}/>
           ) : (
             <Text mt={5} fontSize={22} fontWeight="bold">
               Please Initiate A Search.

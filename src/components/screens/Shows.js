@@ -7,7 +7,7 @@ import ShowLists from '../lists/ShowLists';
 
 import { API_KEY, BASE_URL } from '../../config/api_config';
 
-const Shows = ({ options, defaultOptionIndex, category }) => {
+const Shows = ({ options, defaultOptionIndex, category, navigation }) => {
 
   const [showArr, setShowArr] = useState([]);
   const [sortBy, setSortBy] = useState(options[defaultOptionIndex].sortBy);
@@ -42,7 +42,7 @@ const Shows = ({ options, defaultOptionIndex, category }) => {
           <Selector options={options} sortBy={sortBy} setSortBy={setSortBy} />
         </Center>
         <Center width='85%' height='85%'>
-          <ShowLists showArr={showArr} category={category} />
+          <ShowLists showArr={showArr} category={category} navigation={navigation}/>
         </Center>
       </>
     );

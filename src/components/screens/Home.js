@@ -11,7 +11,6 @@ import {
   Box,
   Center,
   useColorModeValue,
-  Text
 } from 'native-base';
 
 /* ==================================================
@@ -70,30 +69,34 @@ const SearchSelectorOptions = [
   },
 ];
 
-const MovieRoute = () => (
+const MoviePage = (navigation) => (
   <Center flex={1} mt={5}>
     <Shows
       options={movieSelectorOptions}
       defaultOptionIndex="1"
-      category="movie"/>
+      category="movie"
+      navigation={navigation}
+      />
   </Center>
 );
 
-const SearchRoute = () => (
+const SearchPage = (navigation) => (
   <Center flex={1} mt={2}>
     <SearchResults
       options={SearchSelectorOptions}
       defaultOptionIndex="1"
+      navigation={navigation}
     />
   </Center>
 );
 
-const TVShowRoute = () => (
+const TVShowPage = (navigation) => (
   <Center flex={1} mt={2}>
     <Shows
       options={TVShowSelectorOptions}
       defaultOptionIndex="2"
       category="tv"
+      navigation={navigation}
     />
   </Center>
 );
@@ -102,13 +105,9 @@ const TVShowRoute = () => (
 const initialLayout = {
   width: Dimensions.get('window').width,
 };
-const renderScene = SceneMap({
-  first: MovieRoute,
-  second: SearchRoute,
-  third: TVShowRoute,
-});
 
-function TabBar() {
+function TabBar({navigation}) {
+  
   const [index, setIndex] = useState(0);
   const [routes] = useState([
     {
@@ -124,6 +123,18 @@ function TabBar() {
       title: 'TV Shows',
     },
   ]);
+
+  const renderScene = SceneMap({
+    first: ()=>{
+      return MoviePage(navigation)
+    },
+    second: ()=>{
+      return SearchPage(navigation)
+    },
+    third: ()=>{
+      return TVShowPage(navigation)
+    }
+  });
 
   const renderTabBar = (props) => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
@@ -191,10 +202,10 @@ function TabBar() {
   );
 }
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <NativeBaseProvider>
-      <TabBar />
+        <TabBar navigation={navigation} />
     </NativeBaseProvider>
   );
 };

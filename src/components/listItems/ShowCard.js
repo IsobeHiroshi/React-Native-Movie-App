@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Text, Image, Button, Flex, Center } from 'native-base';
+import { Box, Text, Image, Button, Flex } from 'native-base';
 
-const ShowCard = ({ title, img, popularity, releaseDate }) => {
+const ShowCard = ({ title, img, popularity, releaseDate, navigation }) => {
+
   return (
     <Flex direction="row" mb={4}>
       {img ? (
@@ -23,14 +24,14 @@ const ShowCard = ({ title, img, popularity, releaseDate }) => {
           align="center"
           bg="#919191"
         >
-          <Text color='white'>Image not available</Text>
+          <Text color="white">Image not available</Text>
         </Flex>
       )}
       <Box width="65%">
         <Text fontWeight="bold">{title}</Text>
         <Text>Popularity: {popularity}</Text>
         <Text>Release Data: {releaseDate}</Text>
-        <Button>
+        <Button onPress={()=>navigation.navigate('showDetail')}>
           <Text color="white">More Details</Text>
         </Button>
       </Box>
