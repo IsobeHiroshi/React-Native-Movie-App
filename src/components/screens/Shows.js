@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, Spinner, FlatList, Flex } from 'native-base';
+import { Text, Spinner, Center, Flex } from 'native-base';
 import axios from 'axios'
 
 import Selector from '../forms/Selector';
@@ -21,7 +21,8 @@ const Shows = ({ options, defaultOptionIndex, category }) => {
       )
       .then((result) => {
         setShowArr(result.data.results);
-      }).then((result) => setIsLoading(false))
+      })
+      .then((result) => setIsLoading(false))
       .catch((error) => console.log(error));
   }
 
@@ -37,12 +38,12 @@ const Shows = ({ options, defaultOptionIndex, category }) => {
   } else {
     return (
       <>
-        <Selector
-          options={options}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-        />
-        <ShowLists showArr={showArr} category={category}/>
+        <Center mb={10}>
+          <Selector options={options} sortBy={sortBy} setSortBy={setSortBy} />
+        </Center>
+        <Center width='85%' height='85%'>
+          <ShowLists showArr={showArr} category={category} />
+        </Center>
       </>
     );
   }

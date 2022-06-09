@@ -8,14 +8,16 @@ const ShowLists = ({showArr, category})=> {
   return(
     <FlatList
       data={showArr}
-      width="85%"
-      mt={8}
       keyExtractor={(show) => show.id}
       showsVerticalScrollIndicator={false}
       renderItem={({ item }) => {
         return (
           <ShowCard
-            title={category == 'movie' ? item.original_title : item.name}
+            title={
+              category == "movie" || category == "multi"
+                ? item.original_title
+                : item.name
+            }
             img={item.poster_path}
             popularity={item.popularity}
             releaseDate={item.release_date}

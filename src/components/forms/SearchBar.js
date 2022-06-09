@@ -2,7 +2,7 @@ import React from 'react';
 import { FormControl, Flex, Input } from 'native-base';
 import { FontAwesome } from "@expo/vector-icons";
 
-const SearchBar = ({setKeyword})=> {
+const SearchBar = ({ setKeyword, errors })=> {
   return (
     <FormControl width="85%" isRequired>
       <FormControl.Label>Search Movie/TV Show Name</FormControl.Label>
@@ -12,6 +12,8 @@ const SearchBar = ({setKeyword})=> {
         width="100%"
         align="center"
         px={3}
+        borderColor="#f01111"
+        borderWidth={errors.name ? "1" : "0"}
       >
         <FontAwesome name="search" size={20} color="#919191" />
         <Input
@@ -19,7 +21,7 @@ const SearchBar = ({setKeyword})=> {
           placeholder="i.e. James Bond, CSI"
           width="100%"
           onChangeText={(value) => {
-            setKeyword(value)
+            setKeyword(value);
           }}
         />
       </Flex>
