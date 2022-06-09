@@ -13,11 +13,7 @@ const ShowLists = ({showArr, category})=> {
       renderItem={({ item }) => {
         return (
           <ShowCard
-            title={
-              category == "movie" || category == "multi"
-                ? item.original_title
-                : item.name
-            }
+            title={item.title ? item.title : item.name}
             img={item.poster_path}
             popularity={item.popularity}
             releaseDate={item.release_date}
