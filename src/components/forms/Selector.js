@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Center, Box, CheckIcon, FlatList } from 'native-base';
+import { Select, Center, Box, CheckIcon } from 'native-base';
 
 const Selector = ({options, sortBy, setSortBy}) => {
   return (

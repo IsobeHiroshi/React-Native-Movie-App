@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, Select, CheckIcon, Text } from 'native-base';
+import { FormControl, Select, CheckIcon } from 'native-base';
 
 
 const SearchTypeSelector = ({type, setType, options, errors})=> {
