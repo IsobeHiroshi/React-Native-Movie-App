@@ -12,6 +12,3 @@ web-build/
 
 # macOS
 .DS_Store
-
-# API authentication data
-src/config/api_config.js
